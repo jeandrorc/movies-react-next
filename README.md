@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Movies
 
-## Getting Started
 
-First, run the development server:
+Este projeto tem como objetivo desenvolver uma interface que permita aos usuários visualizar a lista de indicados e vencedores da categoria **Pior Filme** do **Golden Raspberry Awards**. O Golden Raspberry Awards, também conhecido como Razzie Awards, é uma premiação que "homenageia" os piores filmes produzidos a cada ano, servindo como uma sátira ao Oscar.
+
+
+![License](https://img.shields.io/github/license/jeandrorc/movies-react-next)
+![Last Commit](https://img.shields.io/github/last-commit/jeandrorc/movies-react-next)
+![Issues](https://img.shields.io/github/issues/jeandrorc/movies-react-next)
+![Pull Requests](https://img.shields.io/github/issues-pr/jeandrorc/movies-react-next)
+
+
+## Índice
+
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação](#instalação)
+- [Configuração do Ambiente](#configuração-do-ambiente)
+- [Executando o Projeto](#executando-o-projeto)
+- [Executando os Testes](#executando-os-testes)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Licença](#licença)
+- [Contato](#contato)
+
+## Sobre o Projeto
+
+Descreva brevemente o propósito do projeto, suas funcionalidades principais e o que o torna especial.
+
+## Pré-requisitos
+
+Antes de começar, certifique-se de ter os seguintes itens instalados em sua máquina:
+
+- Node.js (versão 14 ou superior)
+- npm ou yarn
+- Git
+
+## Instalação
+
+Siga os passos abaixo para configurar o ambiente local:
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/jeandrorc/movies-react-next
+   ```
+2. **Acesse o diretório do projeto:**
+
+   ```bash
+   cd movies-react-next
+   ```
+3. **Instale as dependências:**
+
+   ```bash
+   yarn install
+   ```
+    ou
+    ```bash
+    npm install
+    ```
+## Configuração do Ambiente
+
+Crie um arquivo `.env.local` na raiz do projeto e adicione as seguintes variáveis de ambiente:
+
+   ```env
+   NEXT_PUBLIC_API_URL=https://api.themoviedb.org/3   # URL base da API
+   ```
+
+## Executando o Projeto
+
+Para iniciar o servidor de desenvolvimento, execute o comando:
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+ou
+```bash
+npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse o endereço [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Executando os Testes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para executar os testes, utilize o comando:
 
-## Learn More
+```bash
+yarn test
+```
+ou
+```bash
+npm run test
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Tecnologias Utilizadas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vitest](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Testing Library](https://testing-library.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React Router](https://reactrouter.com/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Licença
 
-## Deploy on Vercel
+Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contato
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Jeandro Couto - @jeandrorc - jeandro.couto@gmail.com
