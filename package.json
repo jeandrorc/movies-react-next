@@ -2,6 +2,12 @@
   "name": "front-end-challenge",
   "version": "0.1.0",
   "private": true,
+  "contributors": [
+    {
+      "name": "Jeandro Couto",
+      "email": "jeandro.couto@gmail.com"
+    }
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
