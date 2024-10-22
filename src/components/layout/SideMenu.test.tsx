@@ -30,6 +30,7 @@ vi.mock('next/link', () => ({
 }));
 
 vi.mock('@/components/ui', () => ({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Button: ({ children, onClick, ...props }: any) => (
     <button onClick={onClick} {...props}>
       {children}

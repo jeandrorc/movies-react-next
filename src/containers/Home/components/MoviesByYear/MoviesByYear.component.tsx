@@ -50,7 +50,7 @@ export function MoviesByYearComponent() {
               error={error}
               render={(movies) =>
                 movies.map((movie) => (
-                  <TableRow key={movie}>
+                  <TableRow key={movie.id}>
                     <TableCell>{movie.id}</TableCell>
                     <TableCell>{movie.year}</TableCell>
                     <TableCell>{movie.title}</TableCell>

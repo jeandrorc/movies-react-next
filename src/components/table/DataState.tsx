@@ -61,5 +61,5 @@ export function DataState<T>({
     );
   }
 
-  return <>{render(data)}</>;
+  return <>{render(data ?? [])}</>;
 }

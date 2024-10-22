@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { UseMultipleWinners, useMultipleWinners } from '@/hooks';
+import { useMultipleWinners } from '@/hooks';
 import {
   Card,
   CardContent,

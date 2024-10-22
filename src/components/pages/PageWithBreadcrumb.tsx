@@ -48,7 +48,7 @@ export function PageWithBreadcrumb({
   );
 }
 
-function Breadcrumb({ name, url, index }: Page) {
+function Breadcrumb({ name, url, index = 0 }: Page) {
   const isLast = !url;
   return (
     <li>
