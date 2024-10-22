@@ -36,7 +36,7 @@ export const SelectYear: React.FC<SelectYearProps> = ({
 
   return (
     <Select value={`${value}`} onValueChange={handleChange}>
-      <SelectTrigger className="w-full">
+      <SelectTrigger className="w-full" aria-haspopup="listbox">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>

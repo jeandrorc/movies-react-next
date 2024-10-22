@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { cn } from '@/lib/utils';
 
 interface BoxProps {
   children: ReactNode;
@@ -39,30 +40,18 @@ interface GridProps {
   children: ReactNode;
   gutter?: number;
   className?: string;
-  cols?: {
-    xs?: number;
-    sm?: number;
-    md?: number;
-    lg?: number;
-    xl?: number;
-  };
 }
 
 export const Grid: React.FC<GridProps> = ({
   children,
-  cols,
   gutter = 16,
   className,
 }) => {
-  const gridClasses = `
-        grid
-        ${cols?.xs ? `grid-cols-${cols.xs}` : ''} 
-        ${cols?.sm ? `sm:grid-cols-${cols.sm}` : ''} 
-        ${cols?.md ? `md:grid-cols-${cols.md}` : ''} 
-        ${cols?.lg ? `lg:grid-cols-${cols.lg}` : ''} 
-        ${cols?.xl ? `xl:grid-cols-${cols.xl}` : ''}
-        ${className && className}
-    `;
+  const gridClasses = cn(
+    'grid',
+    className,
+    'grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2',
+  );
 
   return (
     <div className={gridClasses} style={{ gap: `${gutter}px` }}>

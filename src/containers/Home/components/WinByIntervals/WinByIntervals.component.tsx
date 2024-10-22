@@ -27,7 +27,7 @@ export function WinByIntervals() {
       </CardHeader>
       <CardContent>
         <Label>Maximum</Label>
-        <Table>
+        <Table aria-label="Maximum Section">
           <TableHeader>
             <TableRow>
               <TableHead>Producer</TableHead>
@@ -55,8 +55,9 @@ export function WinByIntervals() {
             />
           </TableBody>
         </Table>
-        <label>Minimum</label>
-        <Table>
+
+        <Label>Minimum</Label>
+        <Table aria-label="Minimum Section">
           <TableHeader>
             <TableRow>
               <TableHead>Producer</TableHead>

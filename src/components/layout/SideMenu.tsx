@@ -30,8 +30,11 @@ export function SideMenu() {
   useClickOutside(drawerRef, () => isDrawerOpen && closeDrawer());
 
   const renderMenuItems = (isMobile: boolean) =>
-    menuItems.map((item) => (
-      <li key={item.name} data-testid={`menu-item-${item.testId}`}>
+    menuItems.map((item, index) => (
+      <li
+        key={item.name}
+        data-testid={`menu-item-${item.testId}-${index}-${isMobile ? 'mobile' : 'desktop'}`}
+      >
         <Link href={item.link} onClick={isMobile ? closeDrawer : undefined}>
           <span
             className={`block p-3 rounded-md border border-gray-700 hover:bg-gray-700 hover:text-amber-400 ${

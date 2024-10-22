@@ -34,7 +34,7 @@ export const Select: React.FC<SimpleSelectProps> = ({
 
   return (
     <SelectBase value={`${value}`} onValueChange={handleChange}>
-      <SelectTrigger className="w-full">
+      <SelectTrigger className="w-full" aria-haspopup="listbox">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>

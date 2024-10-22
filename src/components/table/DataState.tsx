@@ -21,7 +21,14 @@ export function DataState<T>({
   noDataMessage = 'No data found',
   loadingMessage = 'Loading...',
 }: DataStateProps<T>) {
-  if (loading) {
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+    return () => setIsMounted(false);
+  }, []);
+
+  if (loading || !isMounted) {
     return (
       <TableRow>
         <TableCell colSpan={colSpan} className="text-center py-6">

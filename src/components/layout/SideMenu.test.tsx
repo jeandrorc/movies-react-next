@@ -30,7 +30,7 @@ vi.mock('next/link', () => ({
 }));
 
 vi.mock('@/components/ui', () => ({
-  Button: ({ children, onClick, ...props }: never) => (
+  Button: ({ children, onClick, ...props }: any) => (
     <button onClick={onClick} {...props}>
       {children}
     </button>
@@ -83,9 +83,12 @@ describe('SideMenu component', () => {
     const menuToggle = screen.getByTestId('menu-toggle');
     await userEvent.click(menuToggle);
 
-    const menuItem = screen.getByTestId('menu-drawer-item-home-menu');
+    const menuItem = screen.getByTestId('menu-item-home-menu-0-desktop');
+    const menuItemMobile = screen.getByTestId('menu-item-home-menu-0-desktop');
     await userEvent.click(menuItem);
+    expect(screen.queryByTestId('drawer')).not.toBeInTheDocument();
 
+    await userEvent.click(menuItemMobile);
     expect(screen.queryByTestId('drawer')).not.toBeInTheDocument();
   });
 });

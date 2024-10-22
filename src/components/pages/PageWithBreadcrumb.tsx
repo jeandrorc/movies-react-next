@@ -4,6 +4,7 @@ import Link from 'next/link';
 type Page = {
   name: string;
   url: string;
+  index?: number;
 };
 
 interface PageWithBreadcrumbProps {
@@ -24,11 +25,20 @@ export function PageWithBreadcrumb({
               <a href="/" className="font-bold text-gray-500">
                 Home
               </a>
-              {pages?.length && <span className="mx-2">{'>'}</span>}
+              {pages?.length && (
+                <span className="mx-2" data-testid={`separator-0`}>
+                  {'>'}
+                </span>
+              )}
             </li>
             {pages &&
               pages?.map((page, index) => (
-                <Breadcrumb name={page.name} url={page.url} key={index} />
+                <Breadcrumb
+                  name={page.name}
+                  url={page.url}
+                  key={index}
+                  index={index}
+                />
               ))}
           </ul>
         </div>
@@ -38,7 +48,7 @@ export function PageWithBreadcrumb({
   );
 }
 
-function Breadcrumb({ name, url }: Page) {
+function Breadcrumb({ name, url, index }: Page) {
   const isLast = !url;
   return (
     <li>
@@ -48,7 +58,11 @@ function Breadcrumb({ name, url }: Page) {
         </Link>
       )}
       {isLast && <span className="font-black">{name}</span>}
-      {!isLast && <span className="mx-2">{'>'}</span>}
+      {!isLast && (
+        <span className="mx-2" data-testid={`separator-${index + 1}`}>
+          {'>'}
+        </span>
+      )}
     </li>
   );
 }
