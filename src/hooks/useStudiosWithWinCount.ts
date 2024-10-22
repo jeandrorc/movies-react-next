@@ -28,7 +28,7 @@ export function useStudiosWithWinCount(limit = 3) {
         };
 
         loadStudiosWithWinCount();
-    }, []);
+    }, [limit]);
 
     return { data, loading, error };
 }

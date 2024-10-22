@@ -4,8 +4,8 @@ import {Layout} from "@/components/layout";
 
 
 export const metadata: Metadata = {
-  title: "Challenge Next App",
-  description: "Challenge application for Next.js",
+  title: "Movies",
+  description: "Challenge application",
 };
 
 export default function RootLayout({

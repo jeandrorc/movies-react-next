@@ -1,5 +1,4 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { act } from 'react-dom/test-utils';
 import { useMovieByYear } from '@/hooks/useMovieByYear';
 import { fetchMovieByYear } from '@/lib/fetchMovieByYear';
 import { vi } from 'vitest';

@@ -1,5 +1,4 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { act } from 'react-dom/test-utils';
 import { useMultipleWinners } from '@/hooks/useMultipleWinners';
 import { fetchMultipleWinners } from '@/lib/fetchMultipleWinners';
 import { vi } from 'vitest';

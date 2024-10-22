@@ -16,8 +16,8 @@ interface SimpleSelectProps {
 
 export const Select: React.FC<SimpleSelectProps> = ({ options, onChange, value, placeholder = 'Select an option' }) => {
 
-    const handleChange = (selectedValue: string | number) => {
-        onChange(selectedValue);
+    const handleChange = (selectedValue: string | number | undefined) => {
+        onChange(`${selectedValue}`);
     };
 
     return (
@@ -32,7 +32,7 @@ export const Select: React.FC<SimpleSelectProps> = ({ options, onChange, value, 
                 <SelectGroup>
                     <SelectLabel>{placeholder}</SelectLabel>
                     {options.map((option) => (
-                        <SelectItem key={option.value} value={option.value}>
+                        <SelectItem key={option.value} value={`${option.value}`}>
                             {option.label}
                         </SelectItem>
                     ))}

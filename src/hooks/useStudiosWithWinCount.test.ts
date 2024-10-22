@@ -1,5 +1,4 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { act } from 'react-dom/test-utils';
 import { useStudiosWithWinCount } from '@/hooks/useStudiosWithWinCount';
 import { fetchStudios } from '@/lib/fetchStudios';
 import { vi } from 'vitest';

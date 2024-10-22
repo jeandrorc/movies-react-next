@@ -1,5 +1,4 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { act } from 'react-dom/test-utils';
 import { useMovies } from '@/hooks/useMovies';
 import { fetchMovies } from '@/lib/fetchMovies';
 import { vi } from 'vitest';
