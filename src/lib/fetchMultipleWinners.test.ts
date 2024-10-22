@@ -3,51 +3,47 @@ import { fetchMultipleWinners } from '@/lib/fetchMultipleWinners';
 import { MultipleWinnersResponse } from '@/models';
 
 const mockMultipleWinnersResponse: MultipleWinnersResponse = {
-    years: [
-        {
-            year: 2020,
-            winnerCount: 2,
-        },
-        {
-            year: 2018,
-            winnerCount: 3,
-        },
-    ],
+  years: [
+    {
+      year: 2020,
+      winnerCount: 2,
+    },
+    {
+      year: 2018,
+      winnerCount: 3,
+    },
+  ],
 };
 
 describe('fetchMultipleWinners', () => {
-    beforeEach(() => {
-        vi.restoreAllMocks();
-    });
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
 
-    it('should fetch years with multiple winners', async () => {
+  it('should fetch years with multiple winners', async () => {
+    vi.spyOn(global, 'fetch').mockResolvedValueOnce({
+      ok: true,
+      json: async () => mockMultipleWinnersResponse,
+    } as Response);
 
-        vi.spyOn(global, 'fetch').mockResolvedValueOnce({
-            ok: true,
-            json: async () => mockMultipleWinnersResponse,
-        } as Response);
+    const response = await fetchMultipleWinners();
 
-        const response = await fetchMultipleWinners();
+    expect(response).toEqual(mockMultipleWinnersResponse);
 
+    expect(global.fetch).toHaveBeenCalledWith(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}?projection=years-with-multiple-winners`,
+    );
+  });
 
-        expect(response).toEqual(mockMultipleWinnersResponse);
+  it('should throw an error if the API response is not ok', async () => {
+    vi.spyOn(global, 'fetch').mockResolvedValueOnce({
+      ok: false,
+      status: 500,
+      json: async () => ({}),
+    } as Response);
 
-        expect(global.fetch).toHaveBeenCalledWith(
-            `${process.env.NEXT_PUBLIC_API_BASE_URL}?projection=years-with-multiple-winners`
-        );
-    });
-
-    it('should throw an error if the API response is not ok', async () => {
-
-        vi.spyOn(global, 'fetch').mockResolvedValueOnce({
-            ok: false,
-            status: 500,
-            json: async () => ({}),
-        } as Response);
-
-
-        await expect(fetchMultipleWinners()).rejects.toThrow(
-            'Failed to fetch years with multiple winners'
-        );
-    });
+    await expect(fetchMultipleWinners()).rejects.toThrow(
+      'Failed to fetch years with multiple winners',
+    );
+  });
 });

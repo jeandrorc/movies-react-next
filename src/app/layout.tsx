@@ -1,11 +1,10 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import {Layout} from "@/components/layout";
-
+import type { Metadata } from 'next';
+import './globals.css';
+import { Layout } from '@/components/layout';
 
 export const metadata: Metadata = {
-  title: "Movies",
-  description: "Challenge application",
+  title: 'Movies',
+  description: 'Challenge application',
 };
 
 export default function RootLayout({
@@ -13,9 +12,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <Layout>
-        {children}
-    </Layout>
-  );
+  return <Layout>{children}</Layout>;
 }

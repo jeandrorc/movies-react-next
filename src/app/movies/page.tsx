@@ -1,3 +1,3 @@
-import {MoviesPage} from "@/containers/Movies";
+import { MoviesPage } from '@/containers/Movies';
 
 export default MoviesPage;
